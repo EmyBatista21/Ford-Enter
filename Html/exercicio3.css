@@ -1,0 +1,71 @@
+body{
+    background-color: indigo;
+    color: white;
+}
+
+strong{
+    color: #22D4FD;
+}
+
+a{
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 36px;
+    letter-spacing: 0%;
+}
+
+.container{
+    width: 615px;
+    margin:auto;
+}
+
+.text{
+    width: 593;
+    height: 352;
+    top: 278px;
+    left: 357px;
+    gap: 40px;
+    width:50%;
+    float:left;
+}
+
+h1{
+    width: 593;
+    height: 168;
+    font-family: Krona One;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 56px;
+    letter-spacing: 0%;
+
+}
+
+p{
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0%;
+}
+
+.socialMidia{
+    text-align: center;
+    background-color: #22D4FD;
+    border-radius: 16px;
+    padding: 16px;
+    gap: 16px;
+    top: 681px;
+    left: 362px;
+    width:33%;
+    float:left;
+}
+
+.img{
+    width:50%;
+    float:right;
+    width: 488;
+    height: 550;
+    top: 235px;
+    left: 1030px;
+}
