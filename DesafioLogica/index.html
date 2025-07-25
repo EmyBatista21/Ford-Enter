@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Desafio final JavaScript</h1>
+    <h3 id="consumoNecessario"></h3> 
+    <h3 id="menorValor"></h3>
+    <h3 id="mediaPrecos"></h3>
+    <h3 id="gastoDiario"></h3>
+
+    <script>
+        let distanciaPercorrida = null;
+        let consumoMedio = null;
+        let consumoNecessario = null;
+        let qtdPostos = null;
+        let valorDigitado = null;
+        let menorValor = null;
+        let mediaValores = null;
+        let gastoDiario = null;
+
+
+        function validarEntradaInt(mensagem) {
+            let valor;
+            do {
+                valor = parseInt(prompt(mensagem));
+                if(isNaN(valor)){
+                    alert("Entrada inválida! Por favor, insira um número.");
+                }
+                if(valor < 0){
+                    alert("Entrada inválida! Por favor, insira um número positivo.");
+                }
+            } while (isNaN(valor) || valor < 0 );
+            return valor;
+        }
+
+        function validarEntradaFloat(mensagem) {
+            let valor;
+            do {
+                valor = parseFloat(prompt(mensagem));
+                if(isNaN(valor)){
+                     alert("Entrada inválida! Por favor, insira um número.");
+                }
+                if(valor < 0){
+                    alert("Entrada inválida! Por favor, insira um número positivo.");
+                }
+            } while (isNaN(valor) || valor < 0);
+            return valor;
+        }
+
+        distanciaPercorrida = validarEntradaFloat("Insira a distancia percorrida até a ford:");
+        consumoMedio = validarEntradaFloat("Insira o consumo médio:");
+        consumoNecessario = (distanciaPercorrida / consumoMedio);
+
+        qtdPostos = validarEntradaInt("Insira a quantidade de postos pesquisados:");
+        valorDigitado = 0;
+        menorValor = 0;
+        mediaValores = 0;
+
+        for (let cont = 0; cont < qtdPostos; cont++) {
+            let valor = validarEntradaFloat(`Insira o valor do ${cont + 1}° posto`)
+            if (valor < menorValor || menorValor == 0)
+                menorValor = valor;
+            mediaValores += valor;
+        }
+        mediaValores = mediaValores / qtdPostos;
+        gastoDiario = 2 * (consumoNecessario * menorValor);
+
+        document.getElementById("consumoNecessario").innerText = `O consumo necessário: ${consumoNecessario.toFixed(1)} Litros`;
+        document.getElementById("menorValor").innerText = `O menor valor pesquisado: R$${menorValor.toFixed(2)}`;
+        document.getElementById("mediaPrecos").innerText = `A média dos valores: R$${mediaValores.toFixed(2)}`;
+        document.getElementById("gastoDiario").innerText = `Gasto diário (ida e volta): R$${gastoDiario.toFixed(2)}`;
+        
+    </script>
+</body>
+
+</html>
